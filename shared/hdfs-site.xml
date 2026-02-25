@@ -67,10 +67,10 @@
   <value>/opt/data/journalnode</value>
 </property>
 
-<property>
+<!-- <property>
   <name>dfs.ha.fencing.methods</name>
   <value>sshfence</value>
-</property>
+</property> -->
 
 <property>
   <name>dfs.ha.fencing.ssh.private-key-files</name>
