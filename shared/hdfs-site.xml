@@ -32,11 +32,11 @@
 
 <property>
   <name>dfs.namenode.rpc-address.project.nn1</name>
-  <value>node01:8480</value>
+  <value>node01:8420</value>
 </property>
 <property>
   <name>dfs.namenode.rpc-address.project.nn2</name>
-  <value>node02:8480</value>
+  <value>node02:8420</value>
 </property>
 <property>
   <name>dfs.namenode.http-address.project.nn1</name>
@@ -47,7 +47,7 @@
   <value>node02:9870</value>
 </property>
 
-<!-- <property>
+<property>
   <name>dfs.namenode.shared.edits.dir</name>
   <value>qjournal://node01:8485;node02:8485;node03:8485/project</value>
 </property>
@@ -65,14 +65,24 @@
 <property>
   <name>dfs.journalnode.edits.dir</name>
   <value>/opt/data/journalnode</value>
-</property> -->
+</property>
 
-<!-- <property>
+<property>
+  <name>dfs.ha.fencing.methods</name>
+  <value>sshfence</value>
+</property>
+
+<property>
+  <name>dfs.ha.fencing.ssh.private-key-files</name>
+  <value>/root/.ssh/id_rsa</value>
+</property>
+
+<property>
   <name>dfs.ha.nn.not-become-active-in-safemode</name>
   <value>true</value>
-</property> -->
+</property>
 
-<!-- <property>
+<property>
   <name>dfs.ha.automatic-failover.enabled</name>
   <value>true</value>
 </property>
@@ -90,7 +100,7 @@
 <property>
   <name>ipc.maximum.data.length</name>
   <value>268435456</value>
-</property> -->
+</property>
 
 
 </configuration>

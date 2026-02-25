@@ -6,7 +6,8 @@ services:
     container_name: node01
     hostname: node01
     ports:
-      - "8481:8480" # Docker
+      - "8485:8485"   # JournalNode RPC
+      - "8480:8480"   # JournalNode HTTP UI
       - "9871:9870" # HTTP UI
       - "8081:8088" # Yarn
     command: sleep infinity
@@ -23,7 +24,8 @@ services:
     container_name: node02
     hostname: node02
     ports:
-      - "8482:8480"
+      - "8486:8485"   # JournalNode RPC
+      - "8481:8480"   # JournalNode HTTP UI
       - "9872:9870"
       - "8082:8088"
     command: sleep infinity
@@ -40,7 +42,8 @@ services:
     container_name: node03
     hostname: node03
     ports:
-      - "8483:8480"
+      - "8487:8485"   # JournalNode RPC
+      - "8482:8480"   # JournalNode HTTP UI
       - "9873:9870"
       - "8083:8088"
     command: sleep infinity
@@ -57,7 +60,7 @@ services:
     container_name: node04
     hostname: node04
     ports:
-      - "8484:8480"
+      - "8488:8485"
       - "9874:9870"
       - "8084:8088"
     command: sleep infinity
@@ -72,7 +75,7 @@ services:
     container_name: node05
     hostname: node05
     ports:
-      - "8485:8480"
+      - "8489:8420"
       - "9875:9870"
       - "8085:8088"
     command: sleep infinity
