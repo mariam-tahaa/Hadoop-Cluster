@@ -44,6 +44,7 @@ services:
     ports:
       - "8487:8485"   # JournalNode RPC
       - "8482:8480"   # JournalNode HTTP UI
+      - "9864:9864"   # DataNode HTTP UI
       - "9873:9870"
       - "8083:8088"
     command: sleep infinity
@@ -61,11 +62,13 @@ services:
     hostname: node04
     ports:
       - "8488:8485"
+      - "9865:9864"   # DataNode HTTP UI
       - "9874:9870"
       - "8084:8088"
     command: sleep infinity
     volumes:
     - ./dn4:/shared/dn
+    - D:\ITI\Hadoop\Project\shared:/opt/hadoop/etc/hadoop
     - D:\ITI\Hadoop\Project\shared:/root/.ssh
     networks:
       - cluster-network
@@ -76,11 +79,13 @@ services:
     hostname: node05
     ports:
       - "8489:8420"
+      - "9866:9864"   # DataNode HTTP UI
       - "9875:9870"
       - "8085:8088"
     command: sleep infinity
     volumes:
     - ./dn5:/shared/dn
+    - D:\ITI\Hadoop\Project\shared:/opt/hadoop/etc/hadoop
     - D:\ITI\Hadoop\Project\shared:/root/.ssh
     networks:
       - cluster-network

@@ -102,5 +102,16 @@
   <value>268435456</value>
 </property>
 
+<property>
+  <name>dfs.replication</name>
+  <value>3</value>
+</property>
+
+<property>
+  <name>dfs.blocksize</name>
+  <value>134217728</value>  <!-- 127 MB -->
+</property>
+
+
 
 </configuration>
