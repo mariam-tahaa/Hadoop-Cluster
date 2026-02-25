@@ -10,12 +10,13 @@ services:
       - "8480:8480"   # JournalNode HTTP UI
       - "9871:9870" # HTTP UI
       - "8081:8088" # Yarn
-    command: sleep infinity
+    command: bash /start.sh
     volumes:
     - ./jn1:/opt/data/journalnode
     - D:\ITI\Hadoop\Project\shared:/opt/hadoop/etc/hadoop
     - D:\ITI\Hadoop\Project\shared:/root/.ssh
     - ./nn1:/shared/nn
+    - ./start.sh:/start.sh
     networks:
       - cluster-network
 
@@ -28,12 +29,13 @@ services:
       - "8481:8480"   # JournalNode HTTP UI
       - "9872:9870"
       - "8082:8088"
-    command: sleep infinity
+    command: bash /start.sh
     volumes:
     - ./jn2:/opt/data/journalnode
     - D:\ITI\Hadoop\Project\shared:/opt/hadoop/etc/hadoop
     - D:\ITI\Hadoop\Project\shared:/root/.ssh
     - ./nn2:/shared/nn
+    - ./start.sh:/start.sh
     networks:
       - cluster-network
 
@@ -47,12 +49,13 @@ services:
       - "9864:9864"   # DataNode HTTP UI
       - "9873:9870"
       - "8083:8088"
-    command: sleep infinity
+    command: bash /start.sh
     volumes:
     - ./jn3:/opt/data/journalnode
     - D:\ITI\Hadoop\Project\shared:/opt/hadoop/etc/hadoop
     - D:\ITI\Hadoop\Project\shared:/root/.ssh
     - ./dn3:/shared/dn
+    - ./start.sh:/start.sh
     networks:
       - cluster-network
 
@@ -65,11 +68,12 @@ services:
       - "9865:9864"   # DataNode HTTP UI
       - "9874:9870"
       - "8084:8088"
-    command: sleep infinity
+    command: bash /start.sh
     volumes:
     - ./dn4:/shared/dn
     - D:\ITI\Hadoop\Project\shared:/opt/hadoop/etc/hadoop
     - D:\ITI\Hadoop\Project\shared:/root/.ssh
+    - ./start.sh:/start.sh
     networks:
       - cluster-network
 
@@ -82,11 +86,12 @@ services:
       - "9866:9864"   # DataNode HTTP UI
       - "9875:9870"
       - "8085:8088"
-    command: sleep infinity
+    command: bash /start.sh
     volumes:
     - ./dn5:/shared/dn
     - D:\ITI\Hadoop\Project\shared:/opt/hadoop/etc/hadoop
     - D:\ITI\Hadoop\Project\shared:/root/.ssh
+    - ./start.sh:/start.sh
     networks:
       - cluster-network
 
