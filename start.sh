@@ -81,6 +81,24 @@ if [[ "$(hostname)" == "node03" || "$(hostname)" == "node04" || "$(hostname)" ==
     hdfs --daemon start datanode
 fi
 
+sleep 5
+
+# ---------------- YARN ----------------
+
+# RESOURCE MANAGER (node01 Active - node02 Standby)
+if [[ "$(hostname)" == "node01" || "$(hostname)" == "node02" ]]; then
+    echo "Starting ResourceManager on $(hostname)..."
+    yarn --daemon start resourcemanager
+fi
+
+sleep 5
+
+# NODE MANAGER (Workers)
+if [[ "$(hostname)" == "node03" || "$(hostname)" == "node04" || "$(hostname)" == "node05" ]]; then
+    echo "Starting NodeManager on $(hostname)..."
+    yarn --daemon start nodemanager
+fi
+
 echo "All services started on $(hostname)"
 
 tail -f /dev/null

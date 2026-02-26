@@ -8,8 +8,8 @@ services:
     ports:
       - "8485:8485"   # JournalNode RPC
       - "8480:8480"   # JournalNode HTTP UI
-      - "9871:9870" # HTTP UI
-      - "8081:8088" # Yarn
+      - "9871:9870" # Namenode UI
+      - "8081:8088" # Yarn UI
     command: bash /start.sh
     volumes:
     - ./jn1:/opt/data/journalnode
@@ -27,8 +27,8 @@ services:
     ports:
       - "8486:8485"   # JournalNode RPC
       - "8481:8480"   # JournalNode HTTP UI
-      - "9872:9870"
-      - "8082:8088"   # Yarn
+      - "9872:9870"   # Namenode UI
+      - "8082:8088"   # Yarn UI
     command: bash /start.sh
     volumes:
     - ./jn2:/opt/data/journalnode
@@ -47,8 +47,8 @@ services:
       - "8487:8485"   # JournalNode RPC
       - "8482:8480"   # JournalNode HTTP UI
       - "9864:9864"   # DataNode HTTP UI
-      - "9873:9870"
-      - "8083:8088"
+      # - "9873:9870"
+      # - "8083:8088"
     command: bash /start.sh
     volumes:
     - ./jn3:/opt/data/journalnode
@@ -66,8 +66,8 @@ services:
     ports:
       - "8488:8485"
       - "9865:9864"   # DataNode HTTP UI
-      - "9874:9870"
-      - "8084:8088"
+      # - "9874:9870"
+      # - "8084:8088"
     command: bash /start.sh
     volumes:
     - ./dn4:/shared/dn
@@ -82,10 +82,10 @@ services:
     container_name: node05
     hostname: node05
     ports:
-      - "8489:8420"
+      - "8489:8485"
       - "9866:9864"   # DataNode HTTP UI
-      - "9875:9870"
-      - "8085:8088"
+      # - "9875:9870"
+      # - "8085:8088"
     command: bash /start.sh
     volumes:
     - ./dn5:/shared/dn
