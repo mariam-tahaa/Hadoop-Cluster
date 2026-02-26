@@ -28,7 +28,7 @@ services:
       - "8486:8485"   # JournalNode RPC
       - "8481:8480"   # JournalNode HTTP UI
       - "9872:9870"
-      - "8082:8088"
+      - "8082:8088"   # Yarn
     command: bash /start.sh
     volumes:
     - ./jn2:/opt/data/journalnode

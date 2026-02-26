@@ -104,7 +104,7 @@
 
 <property>
   <name>dfs.replication</name>
-  <value>3</value>
+  <value>1</value>
 </property>
 
 <property>
@@ -112,6 +112,20 @@
   <value>134217728</value>  <!-- 127 MB -->
 </property>
 
+<property>
+  <name>dfs.heartbeat.interval</name>
+  <value>3</value> <!-- 15 heartbeats-->
+</property>
+
+<property>
+  <name>dfs.namenode.stale.datanode.interval</name>
+  <value>10000</value> <!-- 15 stale-->
+</property>
+
+<property>
+  <name>dfs.namenode.heartbeat.recheck-interval</name>
+  <value>15000</value> <!-- 30 dead -->
+</property>
 
 
 </configuration>
