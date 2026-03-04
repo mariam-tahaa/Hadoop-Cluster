@@ -103,24 +103,28 @@ wget https://downloads.apache.org/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz
 tar -xvzf hadoop-3.3.6.tar.gz
 mv hadoop-3.3.6 /opt/hadoop
 rm hadoop-3.3.6.tar.gz
+```
 ---
 
 ## C) Start JournalNode
 
 ```bash
 hdfs --daemon start journalnode
+```
 ---
 
 ## D) Format First NameNode
 
 ```bash
 hdfs namenode -format
+```
 ---
 
 ## E) Bootstrap Standby NameNode
 
 ```bash
 hdfs namenode -bootstrapStandby
+```
 ---
 
 ## F) Configure SSH Between Nodes
@@ -130,11 +134,13 @@ ssh-keygen -t rsa -b 4096 -f /root/.ssh/id_rsa -q -N ""
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 chmod 600 /root/.ssh/id_rsa
+```
 
 ### Test Connectivity
 
 ```bash
 ssh root@node02
+```
 ---
 
 ## G) Install ZooKeeper
@@ -145,6 +151,7 @@ wget https://downloads.apache.org/zookeeper/zookeeper-3.9.4/apache-zookeeper-3.9
 tar -xzvf apache-zookeeper-3.9.4-bin.tar.gz
 mv apache-zookeeper-3.9.4-bin /opt/zookeeper
 rm apache-zookeeper-3.9.4-bin.tar.gz
+```
 
 ### Configure ZooKeeper
 
@@ -153,6 +160,7 @@ mkdir -p /opt/data/zookeeper
 echo "1" > /opt/data/zookeeper/myid
 chown -R root:root /opt/data/zookeeper
 chmod -R 755 /opt/data/zookeeper
+```
 
 ### Edit zoo.cfg
 
@@ -165,11 +173,13 @@ syncLimit=2
 server.1=node01:2888:3888
 server.2=node02:2888:3888
 server.3=node03:2888:3888
+```
 
 ### Start ZooKeeper
 
 ```bash
 /opt/zookeeper/bin/zkServer.sh start
+```
 ---
 
 ## H) Enable Automatic Failover
@@ -177,6 +187,7 @@ server.3=node03:2888:3888
 ```bash
 hdfs zkfc -formatZK
 hdfs --daemon start zkfc
+```
 
 ## Testing High Availability
 
@@ -185,12 +196,14 @@ hdfs --daemon start zkfc
 ```bash
 hdfs haadmin -getServiceState nn1
 hdfs haadmin -getServiceState nn2
+```
 
 ### Test ResourceManager HA
 
 ```bash
 yarn rmadmin -getServiceState rm1
 yarn rmadmin -getServiceState rm2
+```
 
 ## Running MapReduce on YARN
 
@@ -200,11 +213,13 @@ yarn rmadmin -getServiceState rm2
 hdfs dfs -mkdir -p /input
 hdfs dfs -put /home/test_file /input/
 hdfs dfs -ls /input/
+```
 
 ### Run WordCount Example
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar wordcount /input /output
+```
 
 ## Automation Using Docker
 
@@ -218,11 +233,13 @@ Mounted start.sh script to auto-start services
 
 ```yaml
 command: sleep infinity
+```
 
 ### To:
 
 ```yaml
 command: bash /start.sh
+```
 
 ## Results Achieved
 
@@ -253,4 +270,5 @@ HDFS High Availability with QJM
 ResourceManager HA
 
 ZooKeeper Documentation
+
 
