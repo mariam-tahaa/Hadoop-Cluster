@@ -217,7 +217,7 @@ hdfs dfs -ls /input/
 ```
 ---
 
-### J) Run WordCount Example
+### Run WordCount Example
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar wordcount /input /output
@@ -275,6 +275,7 @@ HDFS High Availability with QJM
 ResourceManager HA
 
 ZooKeeper Documentation
+
 
 
 
