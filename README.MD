@@ -92,6 +92,7 @@ Each master node contains:
 
 ```bash
 apt install -y openjdk-11-jdk
+```
 
 ---
 
@@ -252,3 +253,4 @@ HDFS High Availability with QJM
 ResourceManager HA
 
 ZooKeeper Documentation
+
