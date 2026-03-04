@@ -204,8 +204,9 @@ hdfs haadmin -getServiceState nn2
 yarn rmadmin -getServiceState rm1
 yarn rmadmin -getServiceState rm2
 ```
+---
 
-## Running MapReduce on YARN
+## I) Running MapReduce on YARN
 
 ### Prepare Input
 
@@ -214,8 +215,9 @@ hdfs dfs -mkdir -p /input
 hdfs dfs -put /home/test_file /input/
 hdfs dfs -ls /input/
 ```
+---
 
-### Run WordCount Example
+### J) Run WordCount Example
 
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar wordcount /input /output
@@ -240,6 +242,7 @@ command: sleep infinity
 ```yaml
 command: bash /start.sh
 ```
+---
 
 ## Results Achieved
 
@@ -261,6 +264,8 @@ Custom Java MapReduce job executed
 
 Data ingestion verified
 
+---
+
 ## References
 
 Hadoop Official Documentation
@@ -270,5 +275,6 @@ HDFS High Availability with QJM
 ResourceManager HA
 
 ZooKeeper Documentation
+
 
 
