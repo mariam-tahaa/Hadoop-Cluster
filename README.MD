@@ -1,8 +1,6 @@
 # 🐘 Hadoop High Availability Cluster with YARN & ZooKeeper
 
-<p align="center">
-  <img src="docs/images/hadoop-cluster-architecture.png" alt="Hadoop HA Cluster Architecture" width="800"/>
-</p>
+
 
 ## Project Overview
 
@@ -279,6 +277,7 @@ HDFS High Availability with QJM
 ResourceManager HA
 
 ZooKeeper Documentation
+
 
 
 
