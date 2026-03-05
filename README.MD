@@ -200,26 +200,6 @@ hdfs dfs -ls /input/
 ```bash
 hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.3.6.jar wordcount /input /output
 ```
-
-## Automation Using Docker
-
-Created Dockerfile with all dependencies
-
-Used docker-compose for cluster orchestration
-
-Mounted start.sh script to auto-start services
-
-### Changed:
-
-```yaml
-command: sleep infinity
-```
-
-### To:
-
-```yaml
-command: bash /start.sh
-```
 ---
 
 ## Results Achieved
@@ -299,6 +279,7 @@ Hadoop Official Documentation
 
 - **DataNode Configuration**  
   https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml
+
 
 
 
