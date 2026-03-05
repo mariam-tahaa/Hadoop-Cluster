@@ -17,30 +17,6 @@ The cluster eliminates single points of failure and ensures distributed storage 
 
 ---
 
-# Cluster Architecture
-
-## Master Nodes (node01, node02)
-
-Each master node contains:
-
-- NameNode (Active / Standby)
-- ResourceManager (Active / Standby)
-- JournalNode
-- ZooKeeper
-- ZK Failover Controller (ZKFC)
-
-## Worker Nodes (node03, node04, node05)
-
-- DataNode
-- NodeManager
-
-## Quorum Services (node01, node02, node03)
-
-- 3 JournalNodes
-- 3 ZooKeeper Nodes
-
----
-
 # Architecture Justification
 
 ## Two NameNodes  
@@ -248,24 +224,47 @@ command: bash /start.sh
 
 ## Results Achieved
 
-NameNode HA working (Active/Standby)
+- NameNode HA working (Active/Standby)
 
-ZooKeeper quorum working
+- ZooKeeper quorum working
 
-JournalNodes operational
+- JournalNodes operational
 
-ResourceManager HA working
+- ResourceManager HA working
 
-Data replication factor = 3 verified
+- Data replication factor = 3 verified
 
-Failover tested successfully
+- Failover tested successfully
 
-MapReduce executed on YARN
+- MapReduce executed on YARN
 
-Custom Java MapReduce job executed
+- Custom Java MapReduce job executed
 
-Data ingestion verified
+- Data ingestion verified
 
+---
+
+## How to Start the Cluster
+
+### Start the Machines
+Run the following command:
+
+```bash
+docker compose up
+```
+### If You Don't Want the Containers to Start Automatically 
+
+#### Change :
+
+```bash
+command: bash /start.sh
+```
+
+#### To :
+
+```bash
+command: sleep infinity
+```
 ---
 
 ## References
@@ -292,6 +291,7 @@ Hadoop Official Documentation
 
 - **DataNode Configuration**  
   https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml
+
 
 
 
