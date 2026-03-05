@@ -244,6 +244,14 @@ command: bash /start.sh
 
 ---
 
+## Automation
+
+- There is a **`start.sh`** script that automatically starts all required services.
+
+- There is a **`Dockerfile`** used to facilitate the installation and preparation of the environment.
+
+---
+
 ## How to Start the Cluster
 
 ### Start the Machines
@@ -254,15 +262,15 @@ docker compose up
 ```
 ### If You Don't Want the Containers to Start Automatically 
 
-#### Change :
+#### Change on docker-compose file :
 
-```bash
+```yaml
 command: bash /start.sh
 ```
 
 #### To :
 
-```bash
+```yaml
 command: sleep infinity
 ```
 ---
@@ -291,6 +299,7 @@ Hadoop Official Documentation
 
 - **DataNode Configuration**  
   https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml
+
 
 
 
