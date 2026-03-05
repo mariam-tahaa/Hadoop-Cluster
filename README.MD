@@ -272,11 +272,29 @@ Data ingestion verified
 
 Hadoop Official Documentation
 
-HDFS High Availability with QJM
+- **Environment Preparation**  
+  https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-common/SingleCluster.html#Prerequisites
 
-ResourceManager HA
+- **NameNode and JournalNode Setup**  
+  https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithQJM.html#Configuration_details
 
-ZooKeeper Documentation
+- **Zookeeper and Automatic Failover**  
+  https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/HDFSHighAvailabilityWithQJM.html#Automatic_Failover
+
+- **SSH Configuration (Passphraseless SSH)**  
+  https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-common/SingleCluster.html#Setup_passphraseless_ssh
+
+- **ResourceManager Setup**  
+  https://hadoop.apache.org/docs/r3.3.0/hadoop-yarn/hadoop-yarn-site/ResourceManagerHA.html#Deployment
+
+- **MapReduce Configuration (mapred-site.xml)**  
+  https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-common/SingleCluster.html#YARN_on_a_Single_Node
+
+- **DataNode Configuration**  
+  https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-hdfs/hdfs-default.xml
+
+
+
 
 
 
